@@ -107,7 +107,11 @@ const DisplayController = (() => {
     const confirmBtn = document.getElementById('player-name-button');
     const nameInput = document.getElementById('player-name-input');
 
-    startButton.addEventListener('click', GameFlow.start);
+    startButton.addEventListener('click', () => {
+        let playerXName = document.querySelector('.player-name[player="x"]').textContent;
+        let playerOName = document.querySelector('.player-name[player="o"]').textContent;
+        GameFlow.start(playerXName, playerOName);
+    });
     boxes.forEach(box => {
         box.addEventListener('click', () => {
             const cellIndex = parseInt(box.getAttribute('cellIndex'));
@@ -157,4 +161,4 @@ const DisplayController = (() => {
 })();
 
 
-document.addEventListener('DOMContentLoaded', GameFlow.start('Player X', 'Player O'));
+document.addEventListener('DOMContentLoaded', GameFlow.start('Player 1', 'Player 2'));
