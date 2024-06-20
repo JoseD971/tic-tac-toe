@@ -3,3 +3,45 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+.container {
+    padding: 50px;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+}
+
+.board {
+    display: grid;
+    grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+    gap: 1px;
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.board > * {
+    background-color: #f22853;
+    fill: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.board > *:hover {
+    cursor: pointer;
+    filter: brightness(80%);
+}
+
+.activated {
+    background-color: #fbd859;
+}
+
+.board > * svg {
+    width: 80%;
+    height: 80%;
+    padding: 0;
+}
